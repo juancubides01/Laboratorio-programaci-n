@@ -222,7 +222,7 @@ public class Diseño extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,26 +326,38 @@ for(boolean ordenado= false;!ordenado;){
     }//GEN-LAST:event_txtbuscarActionPerformed
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
-    int z=0,q=0,m=0;
     int g=Integer.parseInt(txtbuscar.getText());
     int a=modelo.getColumnCount(); 
     int matriz[]=new int [modelo.getColumnCount()];
      for(int w=0;w<a;w++){
          matriz[w]=(int) tbdata.getValueAt(0, w); }
-        if(g==matriz[z]){                
-            orden.setValueAt(z+1, 0,0 );                 
-        }
-        else{
-            z++;
-        }
+        for (int u=0;u<a;u++)
+     {
+         if(matriz[u]==g)
+         {
+             orden.setValueAt(u+1, 0,0 );
+         }
+     }
      int mayor[]=new int [modelo.getColumnCount()];
      for(int w=0;w<a;w++){
          mayor[w]=(int) tbdata.getValueAt(1, w); }
-     if(g==mayor[m]){                
-            orden.setValueAt(m+1, 1, 0);                 
-        }
-        else
-            m++;
+     for (int u=0;u<a;u++)
+     {
+         if(mayor[u]==g)
+         {
+             orden.setValueAt(u+1, 1,0 );
+         }
+     }
+     int menor[]=new int [modelo.getColumnCount()];
+     for(int w=0;w<a;w++){
+         menor[w]=(int) tbdata.getValueAt(2, w); }
+     for (int u=0;u<a;u++)
+     {
+         if(menor[u]==g)
+         {
+             orden.setValueAt(u+1, 2,0 );
+         }
+     }
     }//GEN-LAST:event_buscarActionPerformed
 
        
